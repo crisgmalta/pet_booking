@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, "Nome" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Nome do Pet" %>
   </div>
 
   <div class="field">
-    <%= form.label :birth_date %>
-    <%= form.date_select :birth_date %>
+    <%= form.label :birth_date, "Data nascimento" %>
+    <%= form.date_select :birth_date, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :breed %>
-    <%= form.text_field :breed %>
+    <%= form.label :breed, "Raça" %>
+    <%= form.text_field :breed, class: "form-control", placeholder: "Raça do Pet" %>
   </div>
 
   <div class="field">
-    <%= form.label :pet_kind %>
-    <%= form.text_field :pet_kind %>
+    <%= form.label :pet_kind, "Tipo" %>
+    <%= form.text_field :pet_kind, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Salvar Pet",  class: "btn btn-primary" %>
   </div>
 <% end %>
