@@ -11,6 +11,7 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records/1
   # GET /medical_records/1.json
   def show
+    redirect_to root_path
   end
 
   # GET /medical_records/new

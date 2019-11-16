@@ -10,6 +10,7 @@ class PetsController < ApplicationController
   # GET /pets/1
   # GET /pets/1.json
   def show
+    redirect_to root_path
   end
 
   # GET /pets/new
