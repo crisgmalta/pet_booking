@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pet:</strong>
+  <%= @medical_record.pet_id %>
+</p>
+
+<p>
+  <strong>Symptoms:</strong>
+  <%= @medical_record.symptoms %>
+</p>
+
+<p>
+  <strong>Treatment:</strong>
+  <%= @medical_record.treatment %>
+</p>
+
+<%= link_to 'Edit', edit_medical_record_path(@medical_record) %> |
+<%= link_to 'Back', medical_records_path %>

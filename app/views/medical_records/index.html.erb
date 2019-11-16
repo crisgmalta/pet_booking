@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Medical Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pet</th>
+      <th>Symptoms</th>
+      <th>Treatment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medical_records.each do |medical_record| %>
+      <tr>
+        <td><%= medical_record.pet_id %></td>
+        <td><%= medical_record.symptoms %></td>
+        <td><%= medical_record.treatment %></td>
+        <td><%= link_to 'Show', medical_record %></td>
+        <td><%= link_to 'Edit', edit_medical_record_path(medical_record) %></td>
+        <td><%= link_to 'Destroy', medical_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medical Record', new_medical_record_path %>

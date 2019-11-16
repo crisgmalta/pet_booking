@@ -20,7 +20,7 @@
         <td><%= pet.birth_date %></td>
         <td><%= pet.breed %></td>
         <td><%= pet.pet_kind %></td>
-        <td><%= link_to 'Detalhes', pet %></td>
+        <td><%= link_to 'Prontuário', pet_medical_records(pet) %></td>
         <td><%= link_to 'Editar', edit_pet_path(pet) %></td>
         <td><%= link_to 'Remover', pet, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
