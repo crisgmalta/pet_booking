@@ -15,11 +15,11 @@
   <tbody>
     <% @medical_records.each do |medical_record| %>
       <tr>
-        <td><%= medical_record.created_at %></td>
+        <td><%= medical_record.created_at.strftime("%d/%m/%Y %H:%M") %></td>
         <td><%= medical_record.symptoms %></td>
         <td><%= medical_record.treatment %></td>
         <td><%= link_to 'Editar', edit_pet_medical_record_path(@pet, medical_record) %></td>
-        <td><%= link_to 'Remover', pet_medical_record_path(@pet, medical_record), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remover', pet_medical_record_path(@pet, medical_record), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
