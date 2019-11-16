@@ -3,4 +3,6 @@ class MedicalRecord < ApplicationRecord
 
   has_rich_text :symptoms
   has_rich_text :treatment
+
+  validates :symptoms, :treatment, presence: true
 end
