@@ -11,22 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :pet_id %>
-    <%= form.text_field :pet_id %>
-  </div>
+  <fieldset disabled>
+    <div class="form-group">
+      <label for="disabledTextInput">Pet name</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= @pet.name %>">
+    </div>
+  </fieldset>
 
   <div class="field">
-    <%= form.label :symptoms %>
+    <%= form.label :symptoms, "Sintomas" %>
     <%= form.rich_text_area :symptoms %>
   </div>
 
   <div class="field">
-    <%= form.label :treatment %>
+    <%= form.label :treatment, "Tratamento" %>
     <%= form.rich_text_area :treatment %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Salvar prontuário", class: "btn btn-primary" %>
   </div>
 <% end %>

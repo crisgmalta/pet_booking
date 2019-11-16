@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Medical Records</h1>
+<h1>Prontuário de <%= @pet.name %></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Pet</th>
-      <th>Symptoms</th>
-      <th>Treatment</th>
+      <th scope="col">Atendido em</th>
+      <th scope="col">Sintomas</th>
+      <th scope="col">Tratamento</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,12 +15,11 @@
   <tbody>
     <% @medical_records.each do |medical_record| %>
       <tr>
-        <td><%= medical_record.pet_id %></td>
+        <td><%= medical_record.created_at %></td>
         <td><%= medical_record.symptoms %></td>
         <td><%= medical_record.treatment %></td>
-        <td><%= link_to 'Show', pet_medical_record_path(@pet, medical_record) %></td>
-        <td><%= link_to 'Edit', edit_pet_medical_record_path(@pet, medical_record) %></td>
-        <td><%= link_to 'Destroy', pet_medical_record_path(@pet, medical_record), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_pet_medical_record_path(@pet, medical_record) %></td>
+        <td><%= link_to 'Remover', pet_medical_record_path(@pet, medical_record), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Medical Record', new_pet_medical_record_path %>
+<%= link_to 'Novo Prontuário', new_pet_medical_record_path %>
