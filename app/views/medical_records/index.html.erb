@@ -18,9 +18,9 @@
         <td><%= medical_record.pet_id %></td>
         <td><%= medical_record.symptoms %></td>
         <td><%= medical_record.treatment %></td>
-        <td><%= link_to 'Show', medical_record %></td>
-        <td><%= link_to 'Edit', edit_medical_record_path(medical_record) %></td>
-        <td><%= link_to 'Destroy', medical_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', pet_medical_record_path(@pet, medical_record) %></td>
+        <td><%= link_to 'Edit', edit_pet_medical_record_path(@pet, medical_record) %></td>
+        <td><%= link_to 'Destroy', pet_medical_record_path(@pet, medical_record), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Medical Record', new_medical_record_path %>
+<%= link_to 'New Medical Record', new_pet_medical_record_path %>

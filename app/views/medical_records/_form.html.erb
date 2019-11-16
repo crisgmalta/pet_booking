@@ -1,10 +1,10 @@
-<%= form_with(model: medical_record, local: true) do |form| %>
-  <% if medical_record.errors.any? %>
+<%= form_with(model: @medical_record, url: [@pet, @medical_record], local: true) do |form| %>
+  <% if @medical_record.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(medical_record.errors.count, "error") %> prohibited this medical_record from being saved:</h2>
+      <h2><%= pluralize(@medical_record.errors.count, "error") %> prohibited this medical_record from being saved:</h2>
 
       <ul>
-        <% medical_record.errors.full_messages.each do |message| %>
+        <% @medical_record.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :symptoms %>
-    <%= form.text_area :symptoms %>
+    <%= form.rich_text_area :symptoms %>
   </div>
 
   <div class="field">
     <%= form.label :treatment %>
-    <%= form.text_area :treatment %>
+    <%= form.rich_text_area :treatment %>
   </div>
 
   <div class="actions">
