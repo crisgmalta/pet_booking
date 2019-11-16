@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :pet_kind, "Tipo" %>
-    <%= form.text_field :pet_kind, class: "form-control" %>
+    <%= form.select :pet_kind, Pet::PET_KIND, {}, { class: "custom-select" } %>
   </div>
 
   <div class="actions">
