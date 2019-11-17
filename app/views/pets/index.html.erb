@@ -26,7 +26,7 @@
         <td><%= pet.pet_kind %></td>
         <td><%= link_to 'Prontuários', pet_medical_records_path(pet) %></td>
         <td><%= link_to 'Editar', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Remover', pet, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <td><%= link_to 'Remover', pet, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

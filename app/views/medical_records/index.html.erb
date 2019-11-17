@@ -23,7 +23,7 @@
         <td><%= medical_record.symptoms %></td>
         <td><%= medical_record.treatment %></td>
         <td><%= link_to 'Editar', edit_pet_medical_record_path(@pet, medical_record) %></td>
-        <td><%= link_to 'Remover', pet_medical_record_path(@pet, medical_record), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <td><%= link_to 'Remover', pet_medical_record_path(@pet, medical_record), method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
