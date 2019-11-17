@@ -1,0 +1,15 @@
+# Passos para instalação do projeto
+
+brew install node
+npm install -g yarn
+yarn install
+bundle install
+rails s
+
+
+# Melhorias
+
+Criar um campo de imagem para colocar a foto do Pet.
+Criar um campo para o Genero do Animal ( (F) Feminino -  (M)  Masculino)
+Criar um campo de observação para cadastro de informações relevantes do pet. < opcional >
+Criar uma tela para cadastramento de Raças

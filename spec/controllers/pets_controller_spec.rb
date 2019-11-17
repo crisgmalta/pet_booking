@@ -2,13 +2,27 @@ require 'rails_helper'
 
 RSpec.describe PetsController, type: :controller do
 
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    {
+      name: "name",
+      "birth_date(1i)"=>"2019",
+      "birth_date(2i)"=>"11",
+      "birth_date(3i)"=>"17",
+      breed: "breed",
+      pet_kind: "Cachorro"
+    }
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    {
+      name: "nome",
+      "birth_date(1i)"=>"2019",
+      "birth_date(2i)"=>"11",
+      "birth_date(3i)"=>"17",
+      breed: "raça",
+      pet_kind: "Cachorro_invalid"
+    }
+  end
 
   let(:valid_session) { {} }
 
@@ -24,7 +38,7 @@ RSpec.describe PetsController, type: :controller do
     it "returns a success response" do
       pet = Pet.create! valid_attributes
       get :show, params: {id: pet.to_param}, session: valid_session
-      expect(response).to be_successful
+      expect(response).to redirect_to root_path
     end
   end
 
@@ -67,15 +81,13 @@ RSpec.describe PetsController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+      let(:new_attributes) { valid_attributes.merge(name: "new name") }
 
       it "updates the requested pet" do
         pet = Pet.create! valid_attributes
         put :update, params: {id: pet.to_param, pet: new_attributes}, session: valid_session
         pet.reload
-        skip("Add assertions for updated state")
+        expect(pet.name).to eq "new name"
       end
 
       it "redirects to the pet" do
