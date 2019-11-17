@@ -5,7 +5,7 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records
   # GET /medical_records.json
   def index
-    @medical_records = @pet.medical_records.all
+    @medical_records = @pet.medical_records.all.page(params[:page])
   end
 
   # GET /medical_records/1

@@ -2,6 +2,10 @@
 
 <h1>Prontuário de <%= @pet.name %></h1>
 
+<div class="float-right">
+  <%= link_to 'Novo Prontuário', new_pet_medical_record_path, class: "btn btn-primary active" %>
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -15,7 +19,7 @@
   <tbody>
     <% @medical_records.each do |medical_record| %>
       <tr>
-        <td><%= medical_record.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+        <td><%= medical_record.created_at.strftime('%d/%m/%Y %H:%M') %></td>
         <td><%= medical_record.symptoms %></td>
         <td><%= medical_record.treatment %></td>
         <td><%= link_to 'Editar', edit_pet_medical_record_path(@pet, medical_record) %></td>
@@ -25,6 +29,6 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Novo Prontuário', new_pet_medical_record_path %>
+<div class="float-right">
+  <%= paginate @medical_records, window: 2 %>
+</div>
