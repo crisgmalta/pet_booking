@@ -4,6 +4,7 @@ brew install node
 npm install -g yarn
 yarn install
 bundle install
+rails db:create db:migrate db:seed
 rails s
 
 
